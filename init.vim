@@ -7,7 +7,7 @@ nnoremap <C-j> :tabnext<CR>
 nnoremap <C-w> :close<CR>
 set hidden
 nnoremap <F5> :buffers<CR>:buffer<Space>
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 
 " SPLITS
@@ -48,15 +48,15 @@ Plug 'epilande/vim-react-snippets'
 call plug#end()
 
 
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 " ===========
 " NERDTree
 " ===========
 let NERDTreeShowHidden=1 " Always show dot (hidden) files
 imap <C-l> <Plug>(coc-snippets-expand)
 " let NERDTreeQuitOnOpen=1 " Close the NERDTree after opening a file
-map <Leader>n :NERDTreeFind<CR> " Leader + n to open the NT
+" map <Leader>n :NERDTreeFind<CR> " Leader + n to open the NT
 map <C-n> :NERDTreeToggle<CR>
 
 
@@ -79,3 +79,6 @@ function! s:check_back_space() abort
 endfunction
 
 let g:coc_snippet_next = '<tab>'
+let g:python3_host_prog = $GLOBALINSTALLDIR . "/apps/nvim-py3/bin/python3"
+
+
